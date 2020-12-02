@@ -14,20 +14,34 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     use Authenticatable, Authorizable, HasFactory;
 
     /**
-     * The attributes that are mass assignable.
-     *
+     * The attributes that are mass 
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
+        'username', 'name', 'last_name', 'email',
     ];
 
     /**
-     * The attributes excluded from the model's JSON form.
+     * The attributes excluded fassignable.
+     *rom the model's JSON form.
      *
      * @var array
      */
     protected $hidden = [
         'password',
     ];
+
+    public $timestamp = true;
+
+    public function Comments(){
+        return $this->hasMany('comments');
+    }
+    
+    public function Posts(){
+        return $this->hasMany('posts');
+    }
+
+    public function Grade(){
+        return $this->belongsTo('grade');
+    }
 }
