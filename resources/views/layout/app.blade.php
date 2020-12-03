@@ -11,21 +11,19 @@
     <!-- Style -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/css/styles.css">
-
 </head>
 
 <body class="">
     <!-- Navigation-->
-    <nav class="navbar bg-secondary text-uppercase fixed-top" id="mainNav">
+    <nav class="navbar bg-nav text-uppercase fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">Musica</a>
             <button type="button" class="btn btn-info">Se connecter</button>
         </div>
     </nav>
+    <div style="padding: 5rem 0;"> </div>
 
-    @section('body')
-
-    @show
+    @yield('body')
 
     <!-- Copyright Section-->
     <div class="copyright py-4 text-center text-white fixed-bottom">
