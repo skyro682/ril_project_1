@@ -16,3 +16,6 @@
 $router->get('/', function () use ($router) {
     return view('home');
 });
+$router->get('/post', ['as'=>'post', function () use ($router) {
+    return view('post');
+}]);
