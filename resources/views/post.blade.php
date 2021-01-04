@@ -33,11 +33,13 @@
 
     <div class="col-lg-4"> </div>
     <div class="container form-group col-lg-4 ">
-        <label for="comment">Votre commentaire:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
-        <div class=float-right>
-            <button type="button" class="btn btn-info">Ajouter</button>
-        </div>
+        <form action="{{route('Add_Comment')}}" method="POST">
+            <label for="comment">Votre commentaire:</label>
+            <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+            <div class=float-right>
+                <button type="submit" class="btn btn-info">Ajouter</button>
+            </div>
+        </form>
     </div>
 </section>
 <!-- commentaire Section-->
@@ -63,3 +65,8 @@
 </section>
 
 @endsection
+
+function Post_Comment()
+{
+echo "Exemple de fonction.\n";
+}

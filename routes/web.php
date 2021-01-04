@@ -25,3 +25,4 @@ $router->get('/post', ['as'=>'post', function () use ($router) {
 $router->get('/addPost', ['as'=>'addPost', function () use ($router) {
     return view('addPost');
 }]);
+$router->post('/post', ['uses'=>'AddCommentController@Add_Comment', 'as'=>'Add_Comment']); //Target class [App\Http\Controllers\AuthController] does not exist.
