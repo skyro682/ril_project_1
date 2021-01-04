@@ -19,3 +19,17 @@ $router->get('/', function () use ($router) {
 $router->get('/post', ['as'=>'post', function () use ($router) {
     return view('post');
 }]);
+
+$router->get('/connexion', ['as'=>'connexion', function () use ($router) {
+    return view('connexion');
+}]);
+
+$router->get('/inscription', ['as'=>'inscription', function () use ($router) {
+    return view('inscription');
+}]);
+
+$router->post('/inscription', 'AuthController@inscription');
+
+
+$router->post('/connexion', ['uses'=>'AuthController@traitement', 'as'=>'traitement']);
+
