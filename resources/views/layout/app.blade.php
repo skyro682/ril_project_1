@@ -26,9 +26,9 @@
     @yield('body')
 
     <!-- Copyright Section-->
+    <div style="padding: 5rem 0;"> </div>
     <div class="copyright py-4 text-center text-white fixed-bottom">
         <div class="container"><small>Copyright © Musica 2020</small></div>
     </div>
 </body>
-
 </html>

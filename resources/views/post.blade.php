@@ -2,9 +2,7 @@
 
 @section('body')
 <br>
-<!-- body Section 1-->
-
-
+<!-- body Section-->
 <section class="page-section text-white" id="1">
     <div class="col-lg-4"> </div>
     <div class="container col-lg-4 bg-primary">
@@ -24,11 +22,43 @@
         <div class="text-center mt-4">
             Spotify
         </div>
-        <!-- more Section-->
-        <div class="text-center mt-4">
-            <button type="button" class="btn btn-info">Voir plus...</button>
-        </div>
         <br>
+    </div>
+</section>
+<div style="padding: 1rem 0;"> </div>
+
+<!-- ajout commentaire Section-->
+<hr>
+<section class="page-section" id="add_commentaire">
+
+    <div class="col-lg-4"> </div>
+    <div class="container form-group col-lg-4 ">
+        <label for="comment">Votre commentaire:</label>
+        <textarea class="form-control" rows="5" id="comment"></textarea>
+        <div class=float-right>
+            <button type="button" class="btn btn-info">Ajouter</button>
+        </div>
+    </div>
+</section>
+<!-- commentaire Section-->
+<section class="page-section" id="commentaire">
+    <h5 class="text-center text-uppercase">Commentaire</h5>
+    <!-- Foreach -->
+    <div class="col-lg-4"> </div>
+    <div class="container col-lg-4 bg-comment">
+        <br>
+        <!-- section 1 Section Heading-->
+        <p>COMMENTAIRE. | date | auteur.</p> <!-- com 1-->
+        <hr>
+
+        <p>COMMENTAIRE. | date | auteur.</p> <!-- com 2-->
+        <hr>
+
+        <p>COMMENTAIRE. | date | auteur.</p> <!-- com 3-->
+        <hr>
+
+        <p>COMMENTAIRE. | date | auteur.</p> <!-- com 4-->
+        <hr>
     </div>
 </section>
 
