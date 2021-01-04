@@ -16,6 +16,12 @@
 $router->get('/', function () use ($router) {
     return view('home');
 });
+$router->get('/home', ['as'=>'home', function () use ($router) {
+    return view('home');
+}]);
 $router->get('/post', ['as'=>'post', function () use ($router) {
     return view('post');
+}]);
+$router->get('/addPost', ['as'=>'addPost', function () use ($router) {
+    return view('addPost');
 }]);
