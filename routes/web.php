@@ -31,5 +31,5 @@ $router->get('/inscription', ['as'=>'inscription', function () use ($router) {
 $router->post('/inscription', 'AuthController@inscription');
 
 
-$router->post('/connexion', ['uses'=>'AuthController@traitement', 'as'=>'traitement']);
+$router->post('/connexion', ['uses'=>'AuthController@loginAction', 'as'=>'login']);
 
