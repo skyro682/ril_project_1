@@ -36,8 +36,7 @@ class AuthController extends Controller
         $user->username = request('username');
         $user->name = request('name');
         $user->last_name = request('last_name');
-        $user->password = request('password');
-        //$user->password = hash('sha256', $request->get('password'));
+        $user->password = hash('sha256', $request->get('password'));
         $user->grade_id = "1";
         $user->save();
         return redirect(route('connexion'));

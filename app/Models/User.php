@@ -35,15 +35,18 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     public $timestamp = true;
 
-    public function Comments(){
+    public function Comments()
+    {
         return $this->hasMany('comments');
     }
-    
-    public function Posts(){
+
+    public function Posts()
+    {
         return $this->hasMany('posts');
     }
 
-    public function Grade(){
+    public function Grade()
+    {
         return $this->belongsTo('grade');
     }
 
@@ -53,46 +56,33 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @return User/null
      * 
      */
-    public static function getOneUserByEmail(string $email){
-        $user = DB::table('users')->where('email',$email)->first();
+    public static function getOneUserByEmail(string $email)
+    {
+        $user = DB::table('users')->where('email', $email)->first();
 
 
-        if(!empty($user))
-return new User(get_object_vars($user));
+        if (!empty($user))
+            return new User(get_object_vars($user));
 
-return null;
-    }       
+        return null;
+    }
 
 
-        /**
+    /**
      * @param string $username
      * @return array/null
      * 
      */
-    public static function getOneUserByUsername(string $username){
-        $user = DB::table('users')->where('username',$username)->first();
+    public static function getOneUserByUsername(string $username)
+    {
+        $user = DB::table('users')->where('username', $username)->first();
 
 
-        if(!empty($user))
-return new User(get_object_vars($user));
+        if (!empty($user))
+            return new User(get_object_vars($user));
 
-return null;
-    }       
-
-
-    
-        /**
-     * @param  $password
-     * @return User/null
-     * 
-     */
-    public static function getAuthPassword(string $password){
-        $user = DB::table('users')->where('password',$password)->first();
+        return null;
+    }
 
 
-        if(!empty($user))
-return new User(get_object_vars($user));
-
-return null;
-    }      
 }
