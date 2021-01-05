@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+use App\Models\Posts;
 
 class Comments extends Model
 {
@@ -13,11 +15,11 @@ class Comments extends Model
     public $timestamp = true;
 
     public function Posts(){
-        $this->belongsTo('posts');
+        return $this->belongsTo(Posts::class, 'posts_id');
     }
 
     public function Users(){
-        $this->belongTo('users');
+        return $this->belongsTo(User::class, 'users_id');
     }
     
 }
