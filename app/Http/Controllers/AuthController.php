@@ -9,6 +9,7 @@ use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Lumen\Routing\Controller as BaseController;
 use App\Http\Requests\StorePostRequest;
 use  App\Models\User;
@@ -17,27 +18,13 @@ class AuthController extends Controller
 {
     public function inscription(Request $request)
     {
-
-        // $this->validate($request, [
-
-        //     'email' => ['required', 'email'],
-        //     'username' => ['required', 'username'],
-        //     'name' => ['required', 'name'],
-        //     'last_name' => ['required', 'last_name'],
-        //     'password' => ['required', 'confirmed', 'min:8'],
-        //     'password_confirmation' => ['required'],
-
-        // ]);
-
-
-
         $user = new User;
         $user->email = request('email');
         $user->username = request('username');
         $user->name = request('name');
         $user->last_name = request('last_name');
-        $user->password = request('password');
-        //$user->password = hash('sha256', $request->get('password'));
+        //$user->password = request('password');
+        $user->password = hash('sha256', $request->get('password'));
         $user->grade_id = "1";
         $user->save();
         return redirect(route('connexion'));
@@ -64,12 +51,18 @@ class AuthController extends Controller
 
         // Trying to authenticate user
         $user = User::getOneUserByEmail($request->get('email'));
-        if (!empty($user) && $user->getAuthPassword() === $hashedPassword) {
-            // Setting cookies and redirect to home page
-            SessionTrait::setSessionCookie($user->getAttributeValue('username'));
-            return redirect('/');
-        } else {
-             return view('errors', ['error' => 'Adresse e-mail ou mot de passe incorrect.']);
+        if (!empty($user)){
+
+            if($user->checkAuthPassword($user, $hashedPassword)){
+                SessionTrait::setSessionCookie($user->getAttributeValue('username'));
+                return redirect('/');
+            }
+            else{
+                return 'password';
+            }
+        }
+        else{
+            return 'user';
         }
     }
 

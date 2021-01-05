@@ -57,14 +57,13 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         $user = DB::table('users')->where('email',$email)->first();
 
 
-        if(!empty($user))
-return new User(get_object_vars($user));
+        if(!empty($user)) return new User(get_object_vars($user));
 
-return null;
+        return null;
     }       
 
 
-        /**
+    /**
      * @param string $username
      * @return array/null
      * 
@@ -73,26 +72,25 @@ return null;
         $user = DB::table('users')->where('username',$username)->first();
 
 
-        if(!empty($user))
-return new User(get_object_vars($user));
+        if(!empty($user)) return new User(get_object_vars($user));
 
-return null;
+        return null;
     }       
 
 
     
-        /**
-     * @param  $password
+    /**
+     * @param  string $password
      * @return User/null
      * 
      */
-    public static function getAuthPassword(string $password){
-        $user = DB::table('users')->where('password',$password)->first();
+    public static function checkAuthPassword($user, string $password){
 
+        $user = DB::table('users')->where([['email', $user->email],['password',$password]])->first();
 
-        if(!empty($user))
-return new User(get_object_vars($user));
+        if(!empty($user)) return new User(get_object_vars($user));
 
-return null;
-    }      
+        return null;
+    }    
+      
 }
