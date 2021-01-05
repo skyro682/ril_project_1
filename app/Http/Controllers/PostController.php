@@ -10,7 +10,7 @@ class PostController extends Controller
     public function listAll()
     {
 
-        $posts = Posts::with('users')->orderBy('created_at', 'DESC')->paginate(10);
+        $posts = Posts::with('users')->orderBy('created_at', 'DESC')->simplePaginate(3);
         return view('home', ['posts' => $posts]);
 
     }
