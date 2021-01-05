@@ -18,7 +18,12 @@
     <nav class="navbar bg-nav text-uppercase fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">Musica</a>
-            <button type="button" class="btn btn-info" onclick="location.href='{{route('connexion')}}'">Connecter</button>
+            @if(!isset($_SESSION['user']['username']))
+                <button type="button" class="btn btn-info" onclick="location.href='{{route('connexion')}}'">Connecter</button>
+            @else 
+                <p class="ml-auto mr-4 my-auto text-white">{{ $_SESSION['user']['username'] }}</p>
+                <button type="button" class="btn btn-info" onclick="location.href='{{route('logout')}}'">Déconnecter</button>
+            @endif
         </div>
     </nav>
     <div style="padding: 5rem 0;"> </div>

@@ -32,4 +32,5 @@ $router->post('/inscription', 'AuthController@inscription');
 
 
 $router->post('/connexion', ['uses'=>'AuthController@loginAction', 'as'=>'login']);
+$router->get('/logout', ['uses'=>'AuthController@disconnect', 'as'=>'logout']);
 
