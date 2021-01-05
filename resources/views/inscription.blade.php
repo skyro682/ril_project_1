@@ -1,9 +1,7 @@
 @extends('layout.app')
 
 @section('body')
-    <form   method="post" class="section">
-
-
+    <form action="{{ route('register') }}" method="post" class="section">
     <link rel="stylesheet" href="../public/css/styles2.css" media="screen" type="text/css" />
         <input type="email" name="email" placeholder="Email">
         <input type="username" name="username" placeholder="Nom d'utilisateur">

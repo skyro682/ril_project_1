@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Posts;
 use App\Models\Comments;
+use App\Models\User;
 
 class PostController extends Controller
 {
@@ -25,10 +26,12 @@ class PostController extends Controller
 
     public function addComment($id)
     {
+        $userId = User::where('username', $_SESSION['user']['username'])->first();
+
         $comments = new Comments;
         $comments->content = request('comment');
         $comments->posts_id = $id;
-        $comments->users_id = 1;
+        $comments->users_id = $userId->id;
         $comments->save();
 
         return redirect(route('post', ['id' => $id]));
@@ -36,9 +39,11 @@ class PostController extends Controller
 
     public function addPost()
     {
+        $userId = User::where('username', $_SESSION['user']['username'])->first();
+
         $post = new Posts();
         $post->content = request('content');
-        $post->users_id = 1;
+        $post->users_id = $userId->id;
         $post->spotify_id = 1;
         $post->save();
 

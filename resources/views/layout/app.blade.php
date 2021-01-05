@@ -17,11 +17,13 @@
     <!-- Navigation-->
     <nav class="navbar bg-nav text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Musica</a>
+            <a class="navbar-brand js-scroll-trigger" href="{{ route('home') }}">Musica</a>
             @if(!isset($_SESSION['user']['username']))
+                <button type="button" class="btn btn-info ml-auto mr-2" onclick="location.href='{{route('inscription')}}'">Inscription</button>
                 <button type="button" class="btn btn-info" onclick="location.href='{{route('connexion')}}'">Connecter</button>
             @else 
                 <p class="ml-auto mr-4 my-auto text-white">{{ $_SESSION['user']['username'] }}</p>
+                <button type="button" class="btn btn-info mx-2" onclick="location.href='{{route('addPost')}}'"> + </button>
                 <button type="button" class="btn btn-info" onclick="location.href='{{route('logout')}}'">Déconnecter</button>
             @endif
         </div>

@@ -17,6 +17,9 @@ $router->get('/', ['uses'=>'PostController@listAll', 'as'=>'home']);
 $router->get('/post/{id}', ['uses'=>'PostController@listPost', 'as'=>'post']);
 $router->post('/post/{id}', ['uses'=>'PostController@addComment', 'as'=>'addComment']);
 $router->post('/addPost', ['uses'=>'PostController@addPost', 'as'=>'addPostForm']);
+$router->post('/inscription', ['uses'=>'AuthController@inscription', 'as'=>'register']);
+$router->post('/connexion', ['uses'=>'AuthController@loginAction', 'as'=>'login']);
+$router->get('/logout', ['uses'=>'AuthController@disconnect', 'as'=>'logout']);
 
 $router->get('/addPost', ['as'=>'addPost', function () {
     return view('addPost');
@@ -29,10 +32,3 @@ $router->get('/connexion', ['as'=>'connexion', function () use ($router) {
 $router->get('/inscription', ['as'=>'inscription', function () use ($router) {
     return view('inscription');
 }]);
-
-$router->post('/inscription', 'AuthController@inscription');
-
-
-$router->post('/connexion', ['uses'=>'AuthController@loginAction', 'as'=>'login']);
-$router->get('/logout', ['uses'=>'AuthController@disconnect', 'as'=>'logout']);
-

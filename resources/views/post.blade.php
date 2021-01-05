@@ -50,6 +50,8 @@
     </div>
 </section>
 
+
+@if(isset($_SESSION['user']['username']))
 <!-- ajout commentaire Section-->
 <hr>
 <section class="page-section" id="add_commentaire">
@@ -65,5 +67,6 @@
         </form>
     </div>
 </section>
+@endif
 
 @endsection
