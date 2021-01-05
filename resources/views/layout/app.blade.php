@@ -18,8 +18,8 @@
     <nav class="navbar bg-nav text-uppercase fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top" onclick="location.href='{{route('home')}}'">Musica</a>
-            <button type="button" class="btn btn-info" onclick="location.href='{{route('addPost')}}'"> + </button>
-            <button type="button" class="btn btn-info">Se connecter</button>
+            <button type="button" class="btn btn-info" style="margin-Left: auto;" onclick="location.href='{{route('addPost')}}'"> + </button>
+            <button type="button" class="btn btn-info" style="margin-Left: 5px;">Se connecter</button>
         </div>
     </nav>
     <div style="padding: 5rem 0;"> </div>

@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6 text-center">
-                <p class="lead">{{ $post->content }}</p>
+                <p class="lead"> {{ $post->content }} </p>
             </div>
         </div>
         <!-- spotify Section-->
