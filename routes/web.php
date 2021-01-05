@@ -13,16 +13,11 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return view('home');
-});
-$router->get('/home', ['as'=>'home', function () use ($router) {
-    return view('home');
-}]);
-$router->get('/post', ['as'=>'post', function () use ($router) {
-    return view('post');
-}]);
-$router->get('/addPost', ['as'=>'addPost', function () use ($router) {
+$router->get('/', ['uses'=>'PostController@listAll', 'as'=>'home']);
+$router->get('/post/{id}', ['uses'=>'PostController@listPost', 'as'=>'post']);
+$router->post('/post/{id}', ['uses'=>'PostController@addComment', 'as'=>'addComment']);
+$router->post('/addPost', ['uses'=>'PostController@addPost', 'as'=>'addPostForm']);
+
+$router->get('/addPost', ['as'=>'addPost', function () {
     return view('addPost');
 }]);
-$router->post('/post', ['uses'=>'AddCommentController@Add_Comment', 'as'=>'Add_Comment']); //Target class [App\Http\Controllers\AuthController] does not exist.

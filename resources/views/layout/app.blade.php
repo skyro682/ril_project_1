@@ -7,10 +7,10 @@
     <title>ril_project_1</title>
 
     <!-- Script -->
-    <link rel="stylesheet" href="../public/js/scripts.js">
+    <link rel="stylesheet" href="{{ app('url')->asset('js/script.js', null) }}">
     <!-- Style -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="{{ app('url')->asset('css/styles.css', null) }}">
 </head>
 
 <body class="">

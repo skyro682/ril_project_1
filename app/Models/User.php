@@ -9,9 +9,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Lumen\Auth\Authorizable;
 
+use App\Models\Comments;
+use App\Models\Posts;
+use App\Models\Grade;
+
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
     use Authenticatable, Authorizable, HasFactory;
+
+    protected $table = 'users';
 
     /**
      * The attributes that are mass 
@@ -34,14 +40,14 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     public $timestamp = true;
 
     public function Comments(){
-        return $this->hasMany('comments');
+        return $this->hasMany(Comments::class);
     }
     
     public function Posts(){
-        return $this->hasMany('posts');
+        return $this->hasMany(Posts::class);
     }
 
     public function Grade(){
-        return $this->belongsTo('grade');
+        return $this->belongsTo(Grade::class, 'grade_id');
     }
 }
