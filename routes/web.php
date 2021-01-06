@@ -15,9 +15,19 @@
 
 $router->get('/', ['uses'=>'PostController@listAll', 'as'=>'home']);
 $router->get('/deletePost/{id}', ['uses'=>'PostController@deletePost', 'as'=>'deletePost']);
+$router->get('/deleteComment/{id}/{id_com}', ['uses'=>'PostController@deleteComment', 'as'=>'deleteComment']);
 $router->get('/post/{id}', ['uses'=>'PostController@listPost', 'as'=>'post']);
 $router->post('/post/{id}', ['uses'=>'PostController@addComment', 'as'=>'addComment']);
+
 $router->post('/addPost', ['uses'=>'PostController@addPost', 'as'=>'addPostForm']);
+$router->get('/post/{id}', ['uses'=>'PostController@listPost', 'as'=>'post']);
+$router->get('/updatePostForm/{id}', ['uses'=>'PostController@updatePostForm', 'as'=>'updatePostForm']);
+$router->post('/updatePost/{id}', ['uses'=>'PostController@updatePost', 'as'=>'updatePost']);
+
+$router->get('/updateCommentForm/{id}/{id_com}', ['uses'=>'PostController@updateCommentForm', 'as'=>'updateCommentForm']);
+$router->post('/updateComment/{id}/{id_com}', ['uses'=>'PostController@updateComment', 'as'=>'updateComment']);
+
+
 $router->post('/inscription', ['uses'=>'AuthController@inscription', 'as'=>'register']);
 $router->post('/connexion', ['uses'=>'AuthController@loginAction', 'as'=>'login']);
 $router->get('/logout', ['uses'=>'AuthController@disconnect', 'as'=>'logout']);
