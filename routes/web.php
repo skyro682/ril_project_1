@@ -14,6 +14,7 @@
 */
 
 $router->get('/', ['uses'=>'PostController@listAll', 'as'=>'home']);
+$router->get('/deletePost/{id}', ['uses'=>'PostController@deletePost', 'as'=>'deletePost']);
 $router->get('/post/{id}', ['uses'=>'PostController@listPost', 'as'=>'post']);
 $router->post('/post/{id}', ['uses'=>'PostController@addComment', 'as'=>'addComment']);
 $router->post('/addPost', ['uses'=>'PostController@addPost', 'as'=>'addPostForm']);

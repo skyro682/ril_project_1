@@ -1,4 +1,5 @@
 @extends('layout.app')
+<?php use App\Models\User; ?>
 
 @section('body')
 <br>
@@ -30,6 +31,12 @@
         <!-- more Section-->
         <div class="text-center mt-4">
             <button type="button" class="btn btn-info" onclick="location.href='{{ route('post', ['id' => $post->id]) }}'">Voir plus...</button>
+        </div>
+        <!-- update or delete Section-->
+        <div class="text-center mt-4">
+            @if(isset($_SESSION['user']['username']) && (User::where('username', $_SESSION['user']['username'])->first()->id == $post->users_id || User::where('username', $_SESSION['user']['username'])->first()->grade_id > 1))
+            <a>modifier</a> <a onclick="location.href='{{ route('deletePost', ['id' => $post->id]) }}'">supprimer</a>
+            @endif
         </div>
         <br>
     </div>
