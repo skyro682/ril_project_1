@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73900d5f5da43797d38dc299b41f0fa5",
+    "content-hash": "52f54a8cbc9932ec1583beea9186515a",
     "packages": [
         {
             "name": "brick/math",
@@ -1349,7 +1349,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -1395,7 +1395,7 @@
         },
         {
             "name": "illuminate/pagination",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pagination.git",
@@ -1445,7 +1445,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -1493,16 +1493,16 @@
         },
         {
             "name": "illuminate/queue",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/queue.git",
-                "reference": "5a417cdaa7edc2434fd374979dc2977ceccd4b27"
+                "reference": "34183c7575e5f3b785f5f31a3718f49b91350d04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/queue/zipball/5a417cdaa7edc2434fd374979dc2977ceccd4b27",
-                "reference": "5a417cdaa7edc2434fd374979dc2977ceccd4b27",
+                "url": "https://api.github.com/repos/illuminate/queue/zipball/34183c7575e5f3b785f5f31a3718f49b91350d04",
+                "reference": "34183c7575e5f3b785f5f31a3718f49b91350d04",
                 "shasum": ""
             },
             "require": {
@@ -1554,11 +1554,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-12-11T14:34:10+00:00"
+            "time": "2021-01-05T14:56:06+00:00"
         },
         {
             "name": "illuminate/session",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/session.git",
@@ -1614,16 +1614,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "f221a31bfd107d173510e15e34c3aa667c75602d"
+                "reference": "2393bca6dc657b4364cebb59be160ee7a8fa10e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/f221a31bfd107d173510e15e34c3aa667c75602d",
-                "reference": "f221a31bfd107d173510e15e34c3aa667c75602d",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/2393bca6dc657b4364cebb59be160ee7a8fa10e3",
+                "reference": "2393bca6dc657b4364cebb59be160ee7a8fa10e3",
                 "shasum": ""
             },
             "require": {
@@ -1677,11 +1677,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-12-22T16:13:18+00:00"
+            "time": "2020-12-29T15:08:35+00:00"
         },
         {
             "name": "illuminate/testing",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/testing.git",
@@ -1738,7 +1738,7 @@
         },
         {
             "name": "illuminate/translation",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
@@ -1790,16 +1790,16 @@
         },
         {
             "name": "illuminate/validation",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
-                "reference": "aaa830c505af05a56b041364197a2bcd58cb0712"
+                "reference": "67a2f5d8a7e69490ac390f86dacfcd923b67c5d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/validation/zipball/aaa830c505af05a56b041364197a2bcd58cb0712",
-                "reference": "aaa830c505af05a56b041364197a2bcd58cb0712",
+                "url": "https://api.github.com/repos/illuminate/validation/zipball/67a2f5d8a7e69490ac390f86dacfcd923b67c5d8",
+                "reference": "67a2f5d8a7e69490ac390f86dacfcd923b67c5d8",
                 "shasum": ""
             },
             "require": {
@@ -1845,11 +1845,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-12-22T16:13:18+00:00"
+            "time": "2020-12-21T14:38:56+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -1900,6 +1900,56 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2020-11-02T14:01:41+00:00"
+        },
+        {
+            "name": "jwilsson/spotify-web-api-php",
+            "version": "4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jwilsson/spotify-web-api-php.git",
+                "reference": "12a22d1b2395dd815d7da010cd1f7cbe08bef830"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jwilsson/spotify-web-api-php/zipball/12a22d1b2395dd815d7da010cd1f7cbe08bef830",
+                "reference": "12a22d1b2395dd815d7da010cd1f7cbe08bef830",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.0",
+                "phpunit/phpunit": "^8.5",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SpotifyWebAPI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wilsson",
+                    "email": "jonathan.wilsson@gmail.com"
+                }
+            ],
+            "description": "A PHP wrapper for Spotify's Web API.",
+            "homepage": "https://github.com/jwilsson/spotify-web-api-php",
+            "keywords": [
+                "spotify"
+            ],
+            "support": {
+                "issues": "https://github.com/jwilsson/spotify-web-api-php/issues",
+                "source": "https://github.com/jwilsson/spotify-web-api-php/tree/4.2.0"
+            },
+            "time": "2021-01-05T23:34:28+00:00"
         },
         {
             "name": "laravel/lumen-framework",

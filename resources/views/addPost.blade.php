@@ -15,13 +15,13 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="titre_add_post">Titre</span>
             </div>
-            <input type="text" class="form-control" placeholder="Exemple : 'Blinding Lights'" aria-label="Titre" aria-describedby="titre_add_post">
+            <input name="title" type="text" class="form-control" placeholder="Exemple : 'Blinding Lights'" aria-label="Titre" aria-describedby="titre_add_post" value="{{ (isset($post)) ? $post->music_title : '' }}">
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="auteur_add_post">Auteur</span>
             </div>
-            <input type="text" class="form-control" placeholder="Exemple : 'The Weeknd'" aria-label="Auteur" aria-describedby="auteur_add_post">
+            <input name="artist" type="text" class="form-control" placeholder="Exemple : 'The Weeknd'" aria-label="Auteur" aria-describedby="auteur_add_post" value="{{ (isset($post)) ? $post->music_artist : '' }}">
         </div>
         <label for="comment">Votre avis :</label>
         <textarea class="form-control" rows="5" id="comment" name="content">{{ (isset($post)) ? $post->content : '' }}</textarea>

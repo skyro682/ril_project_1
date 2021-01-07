@@ -12,7 +12,7 @@ class PostController extends Controller
     public function listAll()
     {
 
-        $posts = Posts::with('users')->orderBy('created_at', 'DESC')->simplePaginate(3);
+        $posts = Posts::with('users')->orderBy('created_at', 'DESC')->get();
         return view('home', ['posts' => $posts]);
     }
 
@@ -27,10 +27,15 @@ class PostController extends Controller
     {
         $userId = User::where('username', $_SESSION['user']['username'])->first();
 
+        $song = request('artist') . "+" . request('title');
+        $spotifyId = SpotifyController::searchData($song);
+
         $post = new Posts();
         $post->content = request('content');
         $post->users_id = $userId->id;
-        $post->spotify_id = 1;
+        $post->spotify_id = $spotifyId;
+        $post->music_title = request('title');
+        $post->music_artist = request('artist');
         $post->save();
 
         return redirect(route('home'));

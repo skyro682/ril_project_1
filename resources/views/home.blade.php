@@ -11,8 +11,8 @@
     <div class="container col-lg-4 {{ ($i%2 == 0) ? 'bg-primary' : 'bg-secondary' }}">
         <br>
         <!-- Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase {{ ($i%2 == 0) ? 'text-white' : '' }}">Titre musique</h2>
-        <h5 class=" text-center text-uppercase {{ ($i%2 == 0) ? 'text-white' : '' }}">Artiste</h5>
+        <h2 class="page-section-heading text-center text-uppercase {{ ($i%2 == 0) ? 'text-white' : '' }}">{{ $post->music_title }}</h2>
+        <h5 class=" text-center text-uppercase {{ ($i%2 == 0) ? 'text-white' : '' }}">{{ $post->music_artist }}</h5>
 
         <h6 class=" text-center text-uppercase {{ ($i%2 == 0) ? 'text-white' : '' }}">Post de : {{ $post->users->username }}</h6>
         <h6 class=" text-center text-uppercase {{ ($i%2 == 0) ? 'text-white' : '' }}">écrit le : {{ $post->created_at }}</h6>
@@ -26,7 +26,11 @@
         </div>
         <!-- spotify Section-->
         <div class="text-center mt-4">
-            Spotify
+            @if($post->spotify_id !== '0')
+                <a href="{{ App\Http\Controllers\SpotifyController::getSong($post->spotify_id) }}" class="{{ ($i%2 == 0) ? 'text-white' : 'text-dark' }}">Ecouter la musique</a>
+            @else
+                <P>Aucun lien disponible</P>
+            @endif
         </div>
         <!-- more Section-->
         <div class="text-center mt-4">
@@ -45,15 +49,5 @@
 @endforeach
 <!-- FIN Foreach -->
 
-<section class="">
-    <div class="col-lg-4"> </div>
-    <div class="container col-lg-4">
-        <br>
-        <div class="text-center mt-4">
-            {{ $posts->links() }}
-        </div>
-        <br>
-    </div>
-</section>
 
 @endsection
