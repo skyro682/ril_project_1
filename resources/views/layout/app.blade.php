@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php use App\Models\User; ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +26,10 @@
             @else 
                 <a class="ml-auto mr-4 my-auto text-white" onclick="location.href='{{ route('profile')}}'">{{ $_SESSION['user']['username'] }}</a>
                 <button type="button" class="btn btn-info mx-2" onclick="location.href='{{route('addPost')}}'"> + </button>
-                <button type="button" class="btn btn-info" onclick="location.href='{{route('logout')}}'">Déconnecter</button>
+                <button type="button" class="btn btn-info mx-2" onclick="location.href='{{route('logout')}}'">Déconnecter</button>
+                @if(isset($_SESSION['user']['username']) && User::where('username', $_SESSION['user']['username'])->first()->grade_id == 3)
+                    <button type="button" class="btn btn-info" onclick="location.href='{{route('manageUsers')}}'">Gestion des utilisateur</button>
+                @endif
             @endif
         </div>
     </nav>

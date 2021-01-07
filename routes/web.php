@@ -32,6 +32,9 @@ $router->post('/inscription', ['uses'=>'AuthController@inscription', 'as'=>'regi
 $router->post('/connexion', ['uses'=>'AuthController@loginAction', 'as'=>'login']);
 $router->get('/logout', ['uses'=>'AuthController@disconnect', 'as'=>'logout']);
 
+$router->get('/manageUsers', ['uses'=>'userController@listAllUsers', 'as'=>'manageUsers']);
+$router->get('/deleteUser/{id}', ['uses'=>'UserController@deleteUser', 'as'=>'deleteUser']);
+
 $router->get('/addPost', ['as'=>'addPost', function () {
     return view('addPost');
 }]);
