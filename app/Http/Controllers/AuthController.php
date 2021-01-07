@@ -38,6 +38,7 @@ class AuthController extends Controller
     {
         // Hashing password
         $hashedPassword = hash('sha256', $request->get('password'));
+        $erreur_mpd_user = 'Utilisateur ou mot de passe incorrect.';
 
         // Checking if fields are correct
         try {
@@ -58,11 +59,11 @@ class AuthController extends Controller
                 return redirect('/');
             }
             else{
-                return 'password';
+                return view('errors', ['error' => $erreur_mpd_user]); // return 'password';
             }
         }
         else{
-            return 'user';
+            return view('errors', ['error' => $erreur_mpd_user]);  // return 'user';
         }
     }
 

@@ -21,9 +21,8 @@ class UserController extends Controller
     {
         if (isset($_SESSION['user']['username'])) {
             $userId = User::where('username', $_SESSION['user']['username'])->first();
-
-            $user = User::find($id);
             if ($userId->grade_id == 3) {
+                $user = User::find($id);
                 $user->delete();
             }
         }
