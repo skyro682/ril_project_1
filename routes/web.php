@@ -36,6 +36,11 @@ $router->get('/addPost', ['as'=>'addPost', function () {
     return view('addPost');
 }]);
 
+$router->get('/profile', ['as'=>'profile', function () {
+    return view('profile');
+}]);
+
+
 $router->get('/connexion', ['as'=>'connexion', function () use ($router) {
     return view('connexion');
 }]);

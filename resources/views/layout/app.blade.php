@@ -22,7 +22,7 @@
                 <button type="button" class="btn btn-info ml-auto mr-2" onclick="location.href='{{route('inscription')}}'">Inscription</button>
                 <button type="button" class="btn btn-info" onclick="location.href='{{route('connexion')}}'">Connecter</button>
             @else 
-                <p class="ml-auto mr-4 my-auto text-white">{{ $_SESSION['user']['username'] }}</p>
+                <a class="ml-auto mr-4 my-auto text-white" onclick="location.href='{{ route('profile')}}'">{{ $_SESSION['user']['username'] }}</a>
                 <button type="button" class="btn btn-info mx-2" onclick="location.href='{{route('addPost')}}'"> + </button>
                 <button type="button" class="btn btn-info" onclick="location.href='{{route('logout')}}'">Déconnecter</button>
             @endif

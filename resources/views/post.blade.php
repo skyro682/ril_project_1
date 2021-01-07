@@ -1,7 +1,5 @@
 @extends('layout.app')
-<?php
-
-use App\Models\User; ?>
+<?php use App\Models\User; ?>
 
 @section('body')
 <br>

@@ -6243,6 +6243,19 @@ button.bg-secondary:focus {
   background-color: #1a252f !important;
 }
 
+.bg-3 {
+  background-color: #445c77d0 !important;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+a.bg-3:hover, a.bg-3:focus,
+button.bg-3:hover,
+button.bg-3:focus {
+  background-color: #445c77d0 !important;
+}
+
+
 .bg-comment {
   background-color: #f1f4f7 !important;
   border: 1px solid black;
@@ -10411,4 +10424,8 @@ form .row:first-child .floating-label-form-group {
 
 .copyright {
   background-color: #1a252f;
+}
+
+a {
+  cursor: pointer;
 }
