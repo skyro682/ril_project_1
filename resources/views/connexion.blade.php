@@ -15,7 +15,7 @@
             <form action="{{route('login')}}" method="POST">
                 <h1>Connexion</h1>
                 
-                <label><b>Nom d'utilisateur</b></label>
+                <label><b>Adress mail</b></label>
                 <input type="text" placeholder="Entrer l'email" name="email" required>
 
                 <label><b>Mot de passe</b></label>

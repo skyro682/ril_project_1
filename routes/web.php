@@ -31,9 +31,11 @@ $router->post('/updateComment/{id}/{id_com}', ['uses'=>'PostController@updateCom
 $router->post('/inscription', ['uses'=>'AuthController@inscription', 'as'=>'register']);
 $router->post('/connexion', ['uses'=>'AuthController@loginAction', 'as'=>'login']);
 $router->get('/logout', ['uses'=>'AuthController@disconnect', 'as'=>'logout']);
+$router->post('/delete', ['uses'=>'AuthController@delete', 'as'=>'delete']);
 
 $router->get('/manageUsers', ['uses'=>'userController@listAllUsers', 'as'=>'manageUsers']);
 $router->get('/deleteUser/{id}', ['uses'=>'UserController@deleteUser', 'as'=>'deleteUser']);
+$router->get('/deleteUserB/{id}', ['uses'=>'UserController@deleteUserB', 'as'=>'deleteUserB']);
 
 $router->get('/addPost', ['as'=>'addPost', function () {
     return view('addPost');
@@ -51,3 +53,4 @@ $router->get('/connexion', ['as'=>'connexion', function () use ($router) {
 $router->get('/inscription', ['as'=>'inscription', function () use ($router) {
     return view('inscription');
 }]);
+

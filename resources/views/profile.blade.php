@@ -4,6 +4,11 @@
 
 @section('body')
 <br>
+<?php
+if (isset($_SESSION['user']['username'])) {
+    $User_active = User::with('Grade')->where('username', $_SESSION['user']['username'])->first();
+}
+?>
 <!-- body Section-->
 <section class="page-section text-white" id="1">
     <div class="col-lg-2"> </div>
@@ -18,7 +23,7 @@
         <h6 class=" text-center text-uppercase">Prénom : {{ $User->last_name }}</h6>
         <h6 class=" text-center text-uppercase">Email : {{ $User->email }}</h6>
         <h6 class=" text-center text-uppercase">Rôle : {{ $User->grade->name }}</h6>
-
+        <a onclick="location.href='{{ route('deleteUserB', ['id' => $User->id]) }}'">supprimer</a>
         <!-- section 1 Section Content-->
         <div class="row">
             <div class="col-lg-3"></div>
