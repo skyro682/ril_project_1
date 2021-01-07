@@ -28,4 +28,16 @@ class UserController extends Controller
         }
         return redirect(route('manageUsers'));
     }
+
+    public function deleteUserB($id)
+    {
+        if (isset($_SESSION['user']['username'])) {
+            $userId = User::where('username', $_SESSION['user']['username'])->first();
+            if ($userId->grade_id >=1) {
+                $user = User::find($id);
+                $user->delete();
+            }
+        }
+        return redirect(route('home'));
+    }
 }
